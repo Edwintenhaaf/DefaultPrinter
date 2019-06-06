@@ -14,9 +14,6 @@ if (!$Printers)
     exit
 }
 
-
-
-
 #Build windows
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
@@ -27,7 +24,6 @@ $form.Size = New-Object System.Drawing.Size(400,310)
 $form.StartPosition = 'CenterScreen'                   # CenterScreen, Manual, WindowsDefaultLocation, WindowsDefaultBounds, CenterParent
 $Form.Opacity = 1.0                                   # 1.0 is fully opaque; 0.0 is invisible
 $Form.BackColor = "white"
-
 
 
 $OKButton = New-Object System.Windows.Forms.Button
