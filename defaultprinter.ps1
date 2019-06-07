@@ -104,8 +104,10 @@ Function SetDefaultPrinter
         (Get-WmiObject -ComputerName . -Class Win32_Printer -Filter "Name='$selection'").SetDefaultPrinter() | Out-Null
         
         #check new default
-        $NewDefault = Get-WmiObject -Query " SELECT * FROM Win32_Printer WHERE Default=$true" | Select-Object Name
-        [System.Windows.MessageBox]::Show('default printer set to: '+$NewDefault,'Default printer','OK','Info')
+        [System.Windows.MessageBox]::Show('default printer set to: '+$selection,'Default printer','OK','Info')
+
+        # Compare $selection <> $NewDefault ?
+        #$NewDefault = Get-WmiObject -Query " SELECT * FROM Win32_Printer WHERE Default=$true" | Select-Object Name
     
     } 
     Else 
