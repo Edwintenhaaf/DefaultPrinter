@@ -2,7 +2,7 @@
 #Edwin ten Haaf T4Change
 
 #get current default printer
-$Default = Get-WmiObject -Query " SELECT * FROM Win32_Printer WHERE Default=$true" | select Name,Location
+$Default = Get-WmiObject -Query " SELECT * FROM Win32_Printer WHERE Default=$true" | Select-Object Name,Location
 
 #get list of printers
 $Printers = Get-Printer
@@ -104,8 +104,8 @@ Function SetDefaultPrinter
         (Get-WmiObject -ComputerName . -Class Win32_Printer -Filter "Name='$selection'").SetDefaultPrinter() | Out-Null
         
         #check new default
-        $NewDefault = Get-WmiObject -Query " SELECT * FROM Win32_Printer WHERE Default=$true" | select Name
-        [System.Windows.MessageBox]::Show('default printer set to: '+$selection,'Default printer','OK','Info')
+        $NewDefault = Get-WmiObject -Query " SELECT * FROM Win32_Printer WHERE Default=$true" | Select-Object Name
+        [System.Windows.MessageBox]::Show('default printer set to: '+$NewDefault,'Default printer','OK','Info')
     
     } 
     Else 
