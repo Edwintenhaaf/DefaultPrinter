@@ -1,5 +1,7 @@
-# Edwin ten Haaf T4change
-# DefaultPrinter
+DefaultPrinter
+
+Edwin ten Haaf T4change
+
 Rebuild of the RES Default Printer selection screen
 To use with Ivanti User Workspacemanager (Environment Manager)
 
